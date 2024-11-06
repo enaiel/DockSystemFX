@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.StackPane;
 
+
 import java.util.Objects;
 import java.util.ResourceBundle;
 

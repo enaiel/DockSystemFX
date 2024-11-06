@@ -1,2 +1,5 @@
 rootProject.name = 'DockSystemFX'
 
+include(':docksystemfx')
+include(':docksystemfx-demo')
+

@@ -4,6 +4,13 @@
 <b align="center">Create advanced javaFX GUIs easily with this library!</b>
 <hr>
 
+## About This Fork
+This fork of (https://github.com/Dansoftowner/DockSystemFX)[DockSystemFX] was created to :-
+
+* Be compatible with Java 9 and the module system.
+* Fix a couple of bugs.
+* Get it into Maven central.
+
 ## Some screenshots
 
 <i>Light style + <a href="https://github.com/JFXtras/jfxtras-styles/tree/master/src/jmetro">JMetro</a>'s light style</i>
@@ -37,39 +44,22 @@
 
 <b>Maven example:</b><br>
 
-Add JitPack.io to your repositories :
-```xml
-<repositories>
-   <repository>
-     <id>jitpack.io</id>
-     <url>https://jitpack.io</url>
-   </repository>
-</repositories>
-```
 Add the dependency:
 ```xml
 <dependency>
-    <groupId>com.github.Dansoftowner</groupId>
-    <artifactId>DockSystemFX</artifactId>
-    <version>v1.0</version>
+    <groupId>com.micronarts</groupId>
+    <artifactId>dockSystemff</artifactId>
+    <version>2.0.0</version>
 </dependency>
 ```
 
 <b>Gradle example</b>
 
-Add the repository:
-```groovy
-repositories {
-    //...
-    maven { url 'https://jitpack.io' }
-}
-```
-
 Add the dependency:
 ```groovy
 dependencies {
     //...
-    implementation 'com.github.Dansoftowner:DockSystemFX:v1.0'
+    implementation 'com.micronarts:docksystemfX:2.0.0'
 }
 ```
 

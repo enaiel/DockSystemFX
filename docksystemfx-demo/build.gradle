@@ -1,0 +1,20 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainModule = 'com.dansoftware.dock.demo'
+    mainClass = 'com.dansoftware.dock.demo.DockSystemTest'
+    mainClassName = 'com.dansoftware.dock.demo.DockSystemTest'
+}
+
+dependencies {
+    implementation "org.openjfx:javafx-base:$javafxVersion"
+    implementation "org.openjfx:javafx-graphics:$javafxVersion"
+    implementation "org.openjfx:javafx-controls:$javafxVersion"
+    implementation "org.openjfx:javafx-web:$javafxVersion"
+    implementation "uk.co.bithatch:FX-BorderlessScene:5.0.12"
+    implementation "org.jfxtras:jmetro:11.6.16"
+    implementation "com.micronarts:docksystemfx:$version"
+    //implementation project(':docksystemfx-core')
+}

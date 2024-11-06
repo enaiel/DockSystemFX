@@ -1,0 +1,7 @@
+
+dependencies {
+    implementation "org.openjfx:javafx-base:$javafxVersion"
+    implementation "org.openjfx:javafx-graphics:$javafxVersion"
+    implementation "org.openjfx:javafx-controls:$javafxVersion"
+    implementation "uk.co.bithatch:FX-BorderlessScene:5.0.12"
+}

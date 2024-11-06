@@ -1,30 +1,80 @@
 plugins {
-    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.1.0' apply false
+    id 'org.javamodularity.moduleplugin' version '1.8.15' apply false
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
-    maven {
-        url "https://jitpack.io"
+allprojects {
+
+    group 'com.micronarts'
+    version version
+
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        mavenLocal()
     }
 
-    maven {
-        url  "https://dl.bintray.com/dukke/maven"
-    }
-
-    maven {
-        url "https://github.com/javaterminal/terminalfx/raw/master/releases"
-    }
-
-    maven {
-        url  "https://jetbrains.bintray.com/pty4j"
+    ext {
+        javaVersion = '11'
+        javafxVersion = '17.0.0.1'
     }
 }
 
-dependencies {
-    compile group: 'com.github.goxr3plus', name:'FX-BorderlessScene', version: '4.4.0'
-    testImplementation 'org.jfxtras:jmetro:8.6.11'
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'org.openjfx.javafxplugin'
+    apply plugin: 'org.javamodularity.moduleplugin'
+    apply plugin: 'maven-publish'
+    apply plugin: 'signing'
+
+    java {
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
+        java.modularity.inferModulePath = true
+        withSourcesJar()
+        withJavadocJar()
+    }
+
+    javadoc {
+        if(JavaVersion.current().isJava9Compatible()) {
+            options.addBooleanOption('html5', true)
+        }
+    }
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId = group
+                artifactId = project.name
+                version = version
+
+                from components.java
+
+                pom {
+                    name = 'DockSystemFX'
+                    description = 'A docking library for JavaFX inspired by Intellij Idea\'s dock system (Forked)'
+                    url = 'https://github.com/enaiel/DockSystemFX'
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'enaiel'
+                            email = 'enaiel@gmail.com'
+                        }
+                    }
+                    scm {
+                        connection = 'scm:git:git://github.com/DockSystemFX.git'
+                        developerConnection = 'scm:git:ssh://github.com/DockSystemFX.git'
+                        url = 'https://github.com/enaiel/DockSystemFX'
+                    }
+                }
+            }
+        }
+    }
 }
