@@ -48,7 +48,7 @@ Add the dependency:
 ```xml
 <dependency>
     <groupId>com.micronarts</groupId>
-    <artifactId>dockSystemff</artifactId>
+    <artifactId>docksystemfx</artifactId>
     <version>2.0.0</version>
 </dependency>
 ```
@@ -59,7 +59,7 @@ Add the dependency:
 ```groovy
 dependencies {
     //...
-    implementation 'com.micronarts:docksystemfX:2.0.0'
+    implementation 'com.micronarts:docksystemfx:2.0.0'
 }
 ```
 
